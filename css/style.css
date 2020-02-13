@@ -1,0 +1,49 @@
+body, html{
+    margin:0;
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    background-color: azure;
+    text-align: right;
+}
+
+h1{
+    padding: 30px;
+    margin: 0;
+}
+
+#content{
+    display: flex;
+}
+
+aside{
+    width: 38%;
+    background-color: bisque;
+    padding: 0 1%;
+    display: inline-block;
+}
+
+main{
+    width: 58%;
+    padding: 0 1%;
+    display: inline-block;
+}
+
+ul li{
+    margin-top: 15px;
+}
+
+ul li ul li{
+    margin-top: 0;
+}
+
+/*Opdarcht 2.2*/
+
+article p{
+    background-color: rgba(220,220,220,0.8);
+    border: 1px solid gray;
+    border-radius: 2%;
+    padding: 10px
+}

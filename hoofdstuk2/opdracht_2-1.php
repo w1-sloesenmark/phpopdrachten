@@ -8,6 +8,9 @@
 ?>
 <html>
 <head>
+    <title>
+        Opdracht 2.1
+    </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
