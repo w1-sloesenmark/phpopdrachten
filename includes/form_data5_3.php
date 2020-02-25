@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
+ * Date: 20-02-2020
+ * Time: 08:45
  * File: index.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 3.1
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,44 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <?php print_r($_POST); ?>
+        <br><br>
+        <?php
+            if(empty($_POST['naam'])){
+                echo('Uw naam is niet ingevuld<br>');
+            }
+
+            if($_POST['leeftijdscategorie']==-1){
+                echo('De leeftijdscategorie is niet ingevuld<br>');
+            }
+
+            if(empty($_POST['email'])){
+                echo('Uw email is niet ingevuld<br>');
+            }
+
+            if(empty($_POST['telefoonnummer'])){
+                echo('Uw telefoonnummmer is niet ingevuld<br>');
+            }
+
+            if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                echo("Email is niet van het juiste formaat<br>");
+            }
+
+            if(!preg_match('/^[0-9]{10}+$/', $_POST['telefoonnummer'])&&!empty($_POST['telefoonnummer'])){
+                echo("Het telefoonnummer heeft teveel, te weinig of onbruikelijke tekens");
+            }
+
+
+
+
+        ?>
+        <br><br><a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+include("../includes/footer.php");
+?>
 </body>
 </html>
 

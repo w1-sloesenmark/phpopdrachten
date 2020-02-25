@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
+ * Date: 20-02-2020
+ * Time: 08:45
  * File: index.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 5.1
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,37 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <h2>Ingevoerde gegevens:</h2>
+        <table>
+            <tr>
+                <td>Naam</td>
+                <td><?php echo($_GET['naamV'] ." ". $_GET['naamA'])?></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><?php echo($_GET['email'])?></td>
+            </tr>
+            <tr>
+                <td>Bedrijfnaam</td>
+                <td><?php echo($_GET['bedrijfsnaam'])?></td>
+            </tr>
+            <tr>
+                <td>Telefoon</td>
+                <td><?php echo($_GET['telefoon'])?></td>
+            </tr>
+            <tr>
+                <td>Bericht</td>
+                <td><?php echo($_GET['bericht'])?></td>
+            </tr>
+        </table>
+        <pre><?php print_r($_GET) ?></pre>
+        <br><br><a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+include("../includes/footer.php");
+?>
 </body>
 </html>
 

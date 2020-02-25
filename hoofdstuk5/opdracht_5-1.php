@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
- * File: index.php
+ * Date: 24-02-2020
+ * Time: 19:37
+ * File: opdracht_5-1.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 5.1
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,28 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <form action="../includes/form_data5_1.php" method="get">
+            <label>Bedrijfsnaam</label>
+            <input type="text" name="bedrijfsnaam">
+            <label>Voornaam</label>
+            <input type="text" name="naamV">
+            <label>Achternaam</label>
+            <input type="text" name="naamA">
+            <label>Telefoon</label>
+            <input type="tel" name="telefoon">
+            <label>E-mail</label>
+            <input type="email" name="email">
+            <label>Bedrijfsnaam</label>
+            <textarea name="bericht"></textarea>
+            <input type="submit">
+        </form>
+        <br><br><a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+include("../includes/footer.php");
+?>
 </body>
 </html>
 

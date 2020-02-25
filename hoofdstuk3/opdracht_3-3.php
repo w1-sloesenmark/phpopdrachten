@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
+ * Date: 20-02-2020
+ * Time: 08:45
  * File: index.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 3.3
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,14 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <h2>Opdracht 3.3</h2>
+        <a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+    include("../includes/footer.php");
+?>
 </body>
 </html>
 

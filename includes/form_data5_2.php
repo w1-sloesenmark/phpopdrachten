@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
+ * Date: 20-02-2020
+ * Time: 08:45
  * File: index.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 3.1
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,50 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <h2>Uitschrijfformulier KW1C:</h2>
+        <hr>
+        <table>
+            <tr>
+                <td>Voor en achternaam</td>
+                <td><?php echo($_GET['naam'])?></td>
+            </tr>
+            <tr>
+                <td>studentennummer</td>
+                <td><?php echo($_GET['studentennummer'])?></td>
+            </tr>
+            <tr>
+                <td>Datum van uitschrijving</td>
+                <td><?php echo($_GET['uitschrijfDatum'])?></td>
+            </tr>
+            <tr>
+                <td>Reden van uitschrijving</td>
+                <td><?php echo($_GET['uitschrijfReden'])?></td>
+            </tr>
+            <tr>
+                <td>leerjaar</td>
+                <td><?php echo($_GET['leerjaar'])?> leerjaar</td>
+            </tr>
+            <tr>
+                <td>Aanmelden bij succesklas</td>
+                <td><?php echo($_GET['succesklas'])?></td>
+            </tr>
+            <tr>
+                <td>Verwijder gegevens</td>
+                <td><?php echo($_GET['verwijderGegevens'])?></td>
+            </tr>
+            <tr>
+                <td>Reden van uistrijving</td>
+                <td><?php echo($_GET['redenText'])?></td>
+            </tr>
+        </table>
+        <pre><?php print_r($_GET) ?></pre>
+        <br><br><a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+include("../includes/footer.php");
+?>
 </body>
 </html>
 

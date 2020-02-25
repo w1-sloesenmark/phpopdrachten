@@ -1,6 +1,8 @@
 body, html{
+    position: relative;
     margin:0;
     width: 100%;
+    min-height: 100%;
 }
 
 header{
@@ -19,16 +21,22 @@ h1{
 }
 
 aside{
-    width: 38%;
+    width: 400px;
+    height: fit-content;
     background-color: bisque;
     padding: 0 1%;
     display: inline-block;
 }
 
 main{
-    width: 58%;
+    width: 100%;
     padding: 0 1%;
+    margin-bottom: 100px;
     display: inline-block;
+}
+
+main h1{
+    padding: 0;
 }
 
 ul li{
@@ -39,11 +47,36 @@ ul li ul li{
     margin-top: 0;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
 /*Opdarcht 2.2*/
 
-article p{
+article section{
     background-color: rgba(220,220,220,0.8);
     border: 1px solid gray;
     border-radius: 2%;
-    padding: 10px
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/*Opdracht 4.2*/
+span{
+    font-weight: bold;
+}
+
+/*form*/
+label,input,textarea,select{
+    width:100%;
+}
+
+input[type=radio],input[type=checkbox]{
+    width:inherit;
 }

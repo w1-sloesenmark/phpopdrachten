@@ -1,20 +1,20 @@
 <?php
 /**
  * User: Mark Sloesen
- * Date: 11-02-2020
- * Time: 11:57
- * File: index.php
+ * Date: 24-02-2020
+ * Time: 15:31
+ * File: opdracht_4-2.php
  */
 ?>
 <html>
 <head>
     <title>
-        Opdracht 2.1
+        Opdracht 4.2
     </title>
     <link href="../css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<?php include("../includes/header.php") ?>
+<?php include('../includes/header.php'); ?>
 <div id="content">
     <aside>
         <h2>Menu</h2>
@@ -76,13 +76,19 @@
             </li>
         </ul>
     </aside>
-<main id="wrapper">
-    <h2>Opdracht 2.1</h2>
-    <p><?php echo "Hello World!"?></p>
-    <a href="../index.php">terug</a>
-</main>
+    <main id="wrapper">
+        <h2>Opdracht 4.2</h2>
+        <?php
+            include("../includes/script4_2.php");
+            echo("Voor het vak <span>" . $courseName . "</span> heb je <span>" . $teacherName . "</span> als docent.");
+        ?>
+
+        <br><br><a href="../index.php">terug</a>
+    </main>
 </div>
-<?php include("../includes/footer.php") ?>
+<?php
+include("../includes/footer.php");
+?>
 </body>
 </html>
 
