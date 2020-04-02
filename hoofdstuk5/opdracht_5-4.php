@@ -77,55 +77,63 @@
         </ul>
     </aside>
     <main id="wrapper">
-        <?php
-        echo "<style> 
-        label {
-            width: 20em;
-            display: inline-block;    
-        }
-        </style>";
+        <form method="post" action="opdracht_5-4.php">
+            <table>
+                <tr>
+                    <td>
+                        <label>Komt er een ambulance aan?</label>
+                        <input type="radio" name="ambulanceComming" value="yes">Ja
+                        <input type="radio" name="ambulanceComming" value="no">Nee
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Stop lichtkleur?</label>
+                        <input type="radio" name="trafficLightColor" value="green">Groen
+                        <input type="radio" name="trafficLightColor" value="orange">Oranje
+                        <input type="radio" name="trafficLightColor" value="red">Rood
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="verzend">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                <?php
+                if(isset($_POST["ambulanceComming"]) == true && isset($_POST["trafficLightColor"]) == true){
+                    echo("<h1>Wat is de situatie en wat moet ik doen?</h1>");
+                    if($_POST["trafficLightColor"] == "green"){
+                        echo("<p>Het stoplicht staat op groen.</p>");
+                    }elseif($_POST["trafficLightColor"] == "orange"){
+                        echo("<p>Het stoplicht staat op oranje.</p>");
+                    }elseif($_POST["trafficLightColor"] == "red"){
+                        echo("<p>Het stoplicht staat op rood.</p>");
+                    }
 
-        echo "<h2>Opdracht 5.4</h2>";
-        echo "
-         
-            <form method='post' action='../includes/form_data5_4.php'>
-            <fieldset>
-            <legend>Registratieformulier</legend>
-	        <div><label>Naam: </label><input name='naam' type='text' value=''>
-            </div><div>
-            </div><div><label>Geslacht:</label><span>M</span>
-            <input type='radio' name='geslacht' value='M'>&nbsp;<span>V</span><input type='radio' name='geslacht' value='V'>
-            
-            </div><div><label>Leeftijdscategorie:</label>
-            <select name='leeftijdscategorie'>
-                    <option value='-1'>Selecteer leeftijdsgroep</option>
-                    <option value='1'>&lt;18</option>
-                    <option value='2'>18 - 25</option>
-                    <option value='3'>26 - 40</option>
-                    <option value='4'>&gt;41</option>
-            </select>            
-           
-	        </div><div><label>Email: </label><input name='email' type='text' value=''>
-            
-            </div><div><label>Interessegebieden?</label>
-                IT<input type='checkbox' name='it' value='1'>
-                &nbsp;Games<input type='checkbox' name='games' value='1'>
-                &nbsp;Anime<input type='checkbox' name='anime' value='1'>
-	        </div>
-	        <div>
-	        <label>Telefoonnummer</label>
-	        <input type='tel' name='telefoonnummer'>
-	        </div></fieldset>
-	        <div>
-	        <input type='submit' value='verzend' name='verzend'>
-	        <input type='reset' value='reset' name='reset'>
-            </div>
-            </form>       
-";
+                    echo("<p>En er komt een ambulance aan: " . $_POST["ambulanceComming"] . "</p>");
 
-        ?>
-        <br><br><a href="../index.php">terug</a>
+                    if($_POST["trafficLightColor"] == "green" && $_POST["ambulanceComming"] == "no"){
+                        echo("<p style='color: green'>Je mag doorrijden</p>");
+                    }else{
+                        echo("<p style='color: red'>Je mag niet doorrijden</p>");
+                    }
+                }
+
+
+                if($_SERVER["REQUEST_METHOD"] == "POST"){
+                    if(isset($_POST["trafficLightColor"]) == false){
+                        echo("<p style='color: red'>U heeft een ongeldige invoer gegeven</p>");
+                    }
+                }
+                ?>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </main>
+
 </div>
 <?php
 include("../includes/footer.php");
